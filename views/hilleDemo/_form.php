@@ -352,7 +352,7 @@
              */                
             echo ' '.CHtml::submitButton(Yii::t('HillModule.crud', 'Save'), array(
                 'class' => 'btn btn-primary',
-                'style'=>'visibility: hidden;'                
+              //  'style'=>'visibility: hidden;'                
             ));
                 
         ?>

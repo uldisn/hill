@@ -23,12 +23,12 @@ public function accessRules()
         array(
             'allow',
             'actions' => array('create', 'admin', 'view', 'update', 'editableSaver', 'delete','ajaxCreate'),
-            'roles' => array('Hill.HilleDemo.*'),
+            'roles' => array(),
         ),
         array(
             'allow',
             'actions' => array('create','ajaxCreate'),
-            'roles' => array('Hill.HilleDemo.Create'),
+            'roles' => array(),
         ),
         array(
             'allow',

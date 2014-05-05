@@ -41,27 +41,24 @@ $this->widget('TbGridView',
         'dataProvider' => $model->search(),
         'filter' => $model,
         #'responsiveTable' => true,
-        'template' => '{summary}{pager}{items}{pager}',
+        'template' => '{items}{summary}{pager}',
+        'type'=>'bordered condensed',
+        'rowCssClassExpression' => '$data->cssclass',
         'pager' => array(
             'class' => 'TbPager',
             'displayFirstAndLast' => true,
         ),
         'columns' => array(
-            array(
-                'class' => 'CLinkColumn',
-                'header' => '',
-                'labelExpression' => '$data->itemLabel',
-                'urlExpression' => 'Yii::app()->controller->createUrl("view", array("hill_id" => $data["hill_id"]))'
-            ),
-            array(
+             array(
                 //int(11) unsigned
-                'class' => 'editable.EditableColumn',
+                
                 'name' => 'hill_id',
-                'editable' => array(
-                    'url' => $this->createUrl('/hill/hilleDemo/editableSaver'),
+                
                     //'placement' => 'right',
-                )
+               
             ),
+        
+           
             array(
                 //varchar(100)
                 'class' => 'editable.EditableColumn',
@@ -106,8 +103,13 @@ $this->widget('TbGridView',
                 'editable' => array(
                     'type' => 'date',
                     'url' => $this->createUrl('/hill/hilleDemo/editableSaver'),
-                    //'placement' => 'right',
-                )
+                 ),   
+                 'filter' => $this->widget('application.widgets.TbFilterDateRangePicker', 
+                 array(
+                'model' => $model,
+                'attribute' => 'dol_date_range',
+             ), TRUE ),
+                
             ),
             array(
                 'class' => 'editable.EditableColumn',
@@ -128,7 +130,7 @@ $this->widget('TbGridView',
                     //'placement' => 'right',
                 )
             ),
-            /*
+          
             array(
                     'class' => 'editable.EditableColumn',
                     'name' => 'hill_cargo',
@@ -157,8 +159,17 @@ $this->widget('TbGridView',
                     'type' => 'select',
                     'url' => $this->createUrl('/hill/hilleDemo/editableSaver'),
                     'source' => CHtml::listData(StstState::model()->findAll(array('limit' => 1000)), 'stst_id', 'itemLabel'),                        
-                    //'placement' => 'right',
-                )
+                    'placement' => 'right',
+                  ),  
+            //    'value' => "<span class=\"label label-large label-success arrowed-in\"></span>" ,
+//                'value' => function($data) {
+//            
+//                  switch ($data->hill_status){
+//                     case 1 :  return '<span class="label label-large label-success arrowed-in">' . 'New' . '</span>';
+//                     case 2 :  return '<span class="label label-large label-warning arrowed-in">' . 'Active'. '</span>';
+//                     case 3 :  return '<span class="label label-large label-yellow arrowed-in">' . 'Closed' . '</span>';
+//            }
+//                }   
             ),
             array(
                 'class' => 'editable.EditableColumn',
@@ -178,7 +189,7 @@ $this->widget('TbGridView',
                     //'placement' => 'right',
                 )
             ),
-            */
+            
 
             array(
                 'class' => 'TbButtonColumn',

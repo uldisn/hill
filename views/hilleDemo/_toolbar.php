@@ -62,7 +62,7 @@
                            "icon"=>"icon-list-alt",
                            "size"=>"large",
                            "url"=>array("admin"),
-                           "visible"=>$showManageButton && (Yii::app()->user->checkAccess("Hill.HilleDemo.*") || Yii::app()->user->checkAccess("Hill.HilleDemo.View"))
+                     //      "visible"=>$showManageButton && (Yii::app()->user->checkAccess("Hill.HilleDemo.*") || Yii::app()->user->checkAccess("Hill.HilleDemo.View"))
                         ));
          ?>        </div>
     </div>
@@ -75,7 +75,7 @@
                        "icon"=>"chevron-left",
                        "size"=>"large",
                        "url"=>(isset($_GET["returnUrl"]))?$_GET["returnUrl"]:array("{$this->id}/admin"),
-                       "visible"=>$showCancelButton && (Yii::app()->user->checkAccess("Hill.HilleDemo.*") || Yii::app()->user->checkAccess("Hill.HilleDemo.View")),
+              //         "visible"=>$showCancelButton && (Yii::app()->user->checkAccess("Hill.HilleDemo.*") || Yii::app()->user->checkAccess("Hill.HilleDemo.View")),
                        "htmlOptions"=>array(
                                        "class"=>"search-button",
                                        "data-toggle"=>"tooltip",
@@ -88,7 +88,7 @@
                         "size"=>"large",
                         "type"=>"success",
                         "url"=>array("create"),
-                        "visible"=>$showCreateButton && (Yii::app()->user->checkAccess("Hill.HilleDemo.*") || Yii::app()->user->checkAccess("Hill.HilleDemo.Create"))
+               //         "visible"=>$showCreateButton && (Yii::app()->user->checkAccess("Hill.HilleDemo.*") || Yii::app()->user->checkAccess("Hill.HilleDemo.Create"))
                    ));
                     $this->widget("bootstrap.widgets.TbButton", array(
                         "label"=>Yii::t("HillModule.crud","Delete"),
@@ -99,7 +99,7 @@
                             "submit"=>array("delete","hill_id"=>$model->{$model->tableSchema->primaryKey}, "returnUrl"=>(Yii::app()->request->getParam("returnUrl"))?Yii::app()->request->getParam("returnUrl"):$this->createUrl("admin")),
                             "confirm"=>Yii::t("HillModule.crud","Do you want to delete this item?")
                         ),
-                        "visible"=> $showDeleteButton && (Yii::app()->user->checkAccess("Hill.HilleDemo.*") || Yii::app()->user->checkAccess("Hill.HilleDemo.Delete"))
+                 //       "visible"=> $showDeleteButton && (Yii::app()->user->checkAccess("Hill.HilleDemo.*") || Yii::app()->user->checkAccess("Hill.HilleDemo.Delete"))
                     ));
                     $this->widget("bootstrap.widgets.TbButton", array(
                         #"label"=>Yii::t("HillModule.crud","Update"),
@@ -107,14 +107,14 @@
                         "type"=>"primary",
                         "size"=>"large",
                         "url"=>array("update","hill_id"=>$model->{$model->tableSchema->primaryKey}),
-                        "visible"=> $showUpdateButton &&  (Yii::app()->user->checkAccess("Hill.HilleDemo.*") || Yii::app()->user->checkAccess("Hill.HilleDemo.Update"))
+                  //      "visible"=> $showUpdateButton &&  (Yii::app()->user->checkAccess("Hill.HilleDemo.*") || Yii::app()->user->checkAccess("Hill.HilleDemo.Update"))
                     ));
                     $this->widget("bootstrap.widgets.TbButton", array(
                         #"label"=>Yii::t("HillModule.crud","View"),
                         "icon"=>"icon-eye-open",
                         "size"=>"large",
                         "url"=>array("view","hill_id"=>$model->{$model->tableSchema->primaryKey}),
-                        "visible"=>$showViewButton &&  (Yii::app()->user->checkAccess("Hill.HilleDemo.*") || Yii::app()->user->checkAccess("Hill.HilleDemo.View")),
+                   //     "visible"=>$showViewButton &&  (Yii::app()->user->checkAccess("Hill.HilleDemo.*") || Yii::app()->user->checkAccess("Hill.HilleDemo.View")),
                         "htmlOptions"=>array(
                                       "data-toggle"=>"tooltip",
                                       "title"=>Yii::t("HillModule.crud","View Mode"),

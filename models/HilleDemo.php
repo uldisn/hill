@@ -7,6 +7,7 @@ Yii::import('HilleDemo.*');
 class HilleDemo extends BaseHilleDemo
 {
 
+    public $dol_date_range;  
     // Add your model-specific methods here. This file will not be overriden by gtc except you force it.
     public static function model($className = __CLASS__)
     {
@@ -40,6 +41,14 @@ class HilleDemo extends BaseHilleDemo
           array('column3', 'rule2'),
           ) */
         );
+    }
+    
+      public function getCssClass(){
+        
+       
+        if ($this->hill_status == 1) return 'row-notpaid';
+        elseif ($this->hill_status == 2) return 'row-paid';
+        elseif ($this->hill_status == 3) return 'row-partlypaid';
     }
 
     public function search($criteria = null)
