@@ -1,0 +1,12 @@
+{
+    "name": "uldisn/hill",
+    "description": "For Hill",
+    "keywords": ["hill","yii","phundament"],
+    "type": "yii-extension",
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Edmunds Priede"
+        }
+    ]
+}
