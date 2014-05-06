@@ -180,6 +180,12 @@ public function accessRules()
         if (isset($_GET['HilleDemo'])) {
             $model->attributes = $_GET['HilleDemo'];
         }
+        
+
+       if (isset($_GET['HilleDemo']['dol_date_range']))
+           $model->dol_date_range = $_GET['HilleDemo']['dol_date_range'];
+
+
 
         $this->render('admin', array('model' => $model,));
     }
