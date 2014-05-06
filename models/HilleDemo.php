@@ -60,5 +60,20 @@ class HilleDemo extends BaseHilleDemo
             'criteria' => $this->searchCriteria($criteria),
         ));
     }
+    
+    public function searchCriteria($criteria = null)
+    {
+
+        $criteria = parrent::searchCriteria($criteria);
+
+
+        if(!empty($this->dol_date_range)){
+            $criteria->AddCondition("hill_dol >= '".substr($this->dol_date_range,0,10)."'");
+            $criteria->AddCondition("hill_dol <= '".substr($this->dol_date_range,-10)."'");
+        }
+
+        return $criteria;
+
+    }    
 
 }
