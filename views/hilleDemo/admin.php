@@ -37,7 +37,7 @@ Yii::app()->clientScript->registerScript('search', "
 <?php
 Yii::app()->clientScript->registerScript('re-install-date-picker', "
 function reinstallDatePicker(id, data) {
-   filter_Hilleemo_hill_dol_init();
+   filter_HilleDemo_dol_date_range_init();
 }
 ");
 $this->widget('TbGridView',
