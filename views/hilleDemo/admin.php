@@ -35,6 +35,11 @@ Yii::app()->clientScript->registerScript('search', "
 
 
 <?php
+Yii::app()->clientScript->registerScript('re-install-date-picker', "
+function reinstallDatePicker(id, data) {
+   filter_Hilleemo_hill_dol_init();
+}
+");
 $this->widget('TbGridView',
     array(
         'id' => 'hille-demo-grid',
@@ -48,6 +53,7 @@ $this->widget('TbGridView',
             'class' => 'TbPager',
             'displayFirstAndLast' => true,
         ),
+        'afterAjaxUpdate' => 'reinstallDatePicker',
         'columns' => array(
              array(
                 //int(11) unsigned
