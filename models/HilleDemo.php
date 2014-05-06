@@ -64,7 +64,7 @@ class HilleDemo extends BaseHilleDemo
     public function searchCriteria($criteria = null)
     {
 
-        $criteria = parrent::searchCriteria($criteria);
+        $criteria = parent::searchCriteria($criteria);
 
 
         if(!empty($this->dol_date_range)){
