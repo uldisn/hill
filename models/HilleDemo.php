@@ -58,7 +58,7 @@ class HilleDemo extends BaseHilleDemo
         }
         return new CActiveDataProvider(get_class($this), array(
             'criteria' => $this->searchCriteria($criteria),
-             'pagination'=>array('pageSize'=>20),
+             'pagination'=>array('pageSize'=>15),
         ));
     }
     
