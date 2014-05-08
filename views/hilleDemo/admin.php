@@ -120,6 +120,7 @@ $this->widget('TbGridView',
             array(
                 'class' => 'editable.EditableColumn',
                 'name' => 'hill_carrier_id',
+                'filter' => CHtml::listData(CcmpCompany::model()->findAll(array('limit' => 1000,'order'=>'ccmp_name')), 'ccmp_id', 'ccmp_name'),
                 'editable' => array(
                     'type' => 'select',
                     'url' => $this->createUrl('/hill/hilleDemo/editableSaver'),
