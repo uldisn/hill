@@ -23,27 +23,27 @@ public function accessRules()
         array(
             'allow',
             'actions' => array('create', 'admin', 'view', 'update', 'editableSaver', 'delete','ajaxCreate'),
-            'roles' => array('@'),
+            'roles' => array('hill'),
         ),
         array(
             'allow',
             'actions' => array('create','ajaxCreate'),
-            'roles' => array('@'),
+            'roles' => array('hil'),
         ),
         array(
             'allow',
             'actions' => array('view', 'admin'), // let the user view the grid
-            'roles' => array('Hill.HilleDemo.View'),
+            'roles' => array('hill'),
         ),
         array(
             'allow',
             'actions' => array('update', 'editableSaver'),
-            'roles' => array('Hill.HilleDemo.Update'),
+            'roles' => array('hill'),
         ),
         array(
             'allow',
             'actions' => array('delete'),
-            'roles' => array('Hill.HilleDemo.Delete'),
+            'roles' => array('hill'),
         ),
         array(
             'deny',
