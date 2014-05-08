@@ -28,7 +28,7 @@ public function accessRules()
         array(
             'allow',
             'actions' => array('create','ajaxCreate'),
-            'roles' => array('hil'),
+            'roles' => array('hill'),
         ),
         array(
             'allow',
