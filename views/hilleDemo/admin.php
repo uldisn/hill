@@ -31,7 +31,17 @@ Yii::app()->clientScript->registerScript('search', "
 
 
 <?php $this->renderPartial("_toolbar", array("model" => $model)); ?>
+<?php $this->renderPartial('_search_range', array('model' => $model,)); 
+
+ $this->widget(
+            'TbMenu', array(
+        'type' => 'tabs',
+        'items' => array(array('label' => 'Active', 'url'=> ''),array('label' => 'New', 'url'=>''), array('label'=> ' Closed','url'=>''))       
+    ));
+
+?>
 <?php Yii::beginProfile('HilleDemo.view.grid'); ?>
+
 
 
 <?php
