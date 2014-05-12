@@ -58,7 +58,23 @@ class HilleDemo extends BaseHilleDemo
         }
         return new CActiveDataProvider(get_class($this), array(
             'criteria' => $this->searchCriteria($criteria),
+             'pagination'=>array('pageSize'=>15),
         ));
     }
+    
+    public function searchCriteria($criteria = null)
+    {
+
+        $criteria = parent::searchCriteria($criteria);
+
+
+        if(!empty($this->dol_date_range)){
+            $criteria->AddCondition("hill_dol >= '".substr($this->dol_date_range,0,10)."'");
+            $criteria->AddCondition("hill_dol <= '".substr($this->dol_date_range,-10)."'");
+        }
+
+        return $criteria;
+
+    }    
 
 }
